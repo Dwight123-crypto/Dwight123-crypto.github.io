@@ -1,42 +1,901 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<style type="text/css">
+    @media screen {
+      @font-face {
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v11/qIIYRU-oROkIk8vfvxw6QvesZW2xOQ-xsNqO47m55DA.woff) format('woff');
+      }
+      @font-face {
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 700;
+        src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v11/qdgUG4U09HnJwhYI-uK18wLUuEpTyoUstqEm5AMlJo4.woff) format('woff');
+      }
+      @font-face {
+        font-family: 'Lato';
+        font-style: italic;
+        font-weight: 400;
+        src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v11/RYyZNoeFgb0l7W3Vu1aSWOvvDin1pK8aKteLpeZ5c0A.woff) format('woff');
+      }
+      @font-face {
+        font-family: 'Lato';
+        font-style: italic;
+        font-weight: 700;
+        src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v11/HkF_qI1x_noxlxhrhMQYELO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+      }
+    }
     
-    <div class="main">
-        <ul>
-            <li  id="color-bcg" class="active">
-                <nav class="menu">
-                    <h4>Home</h4>
-                    <h4>About Us</h4>
-                    <h4>Products</h4>
-                    <h4>Contact</h4>
-                </nav>
-                <article>
-                    <h1>An amazing text here.</h1>
-                </article>
-            </li>
-            <li>
-                <section id="content-2">
-                    <h2>Click here.</h2>
-                    <p class="d-none">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </section>
-            </li>
-        </ul>
-        <ul>
-            <li id="content-3">
-                <img src="https://i.gifer.com/1e.gif"></img>
-            </li>
-            <li id="content-4">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </li>
-        </ul>
-    </div>
-    <script src="code.js"></script>
-</body>
-</html>
+    #outlook a {
+      padding: 0;
+    }
+    /* Force Outlook to provide a "view in browser" message */
+    
+    .ReadMsgBody {
+      width: 100%;
+    }
+    
+    .ExternalClass {
+      width: 100%;
+    }
+    /* Force Hotmail to display emails at full width */
+    
+    .ExternalClass,
+    .ExternalClass p,
+    .ExternalClass span,
+    .ExternalClass font,
+    .ExternalClass td,
+    .ExternalClass div {
+      line-height: 100%;
+    }
+    /* Force Hotmail to display normal line spacing */
+    
+    body,
+    table,
+    td,
+    p,
+    a,
+    li,
+    blockquote {
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
+    /* Prevent WebKit and Windows mobile changing default text sizes */
+    
+    table,
+    td {
+      mso-table-lspace: 0pt;
+      mso-table-rspace: 0pt;
+    }
+    /* Remove spacing between tables in Outlook 2007 and up */
+    
+    img {
+      -ms-interpolation-mode: bicubic;
+    }
+    /* Allow smoother rendering of resized image in Internet Explorer */
+    
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    
+    img {
+      border: 0;
+      height: auto;
+      line-height: 100%;
+      outline: none;
+      text-decoration: none;
+    }
+    
+    table {
+      border-collapse: collapse !important;
+    }
+    
+    body,
+    #bodyTable,
+    #bodyCell {
+      height: 100% !important;
+      margin: 0;
+      padding: 0;
+      width: 100% !important;
+    }
+    
+    #bodyCell {
+      padding: 20px;
+    }
+    
+    #templateContainer {
+      width: 600px;
+    }
+    
+    body,
+    #bodyTable {
+      /*@editable*/
+      background-color: #444;
+    }
+    
+    #bodyCell {
+      /*@editable*/
+      border-top: 4px solid #BBBBBB;
+    }
+    
+    #templateContainer {
+      /*@editable*/
+      border: 0
+    }
+    
+    .single-spark-item {
+      margin-bottom: 50px;
+    }
+    
+    #templateHeader {
+      /*@editable*/
+      background-color: #181818;
+      /*@editable*/
+      border-top: 0;
+      /*@editable*/
+      border-bottom: 0;
+    }
+    
+    .headerContent {
+      /*@editable*/
+      color: #505050;
+      /*@editable*/
+      font-family: Helvetica;
+      /*@editable*/
+      font-size: 20px;
+      /*@editable*/
+      font-weight: bold;
+      /*@editable*/
+      line-height: 100%;
+      /*@editable*/
+      padding-top: 20px;
+      /*@editable*/
+      padding-right: 0;
+      /*@editable*/
+      padding-bottom: 20px;
+      /*@editable*/
+      padding-left: 20px;
+      /*@editable*/
+      text-align: left;
+      /*@editable*/
+      vertical-align: middle;
+    }
+    
+    h1 {
+      /*@editable*/
+      color: #202020 !important;
+      display: block;
+      /*@editable*/
+      font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+      /*@editable*/
+      font-size: 26px;
+      /*@editable*/
+      font-style: normal;
+      /*@editable*/
+      font-weight: bold;
+      /*@editable*/
+      line-height: 100%;
+      /*@editable*/
+      letter-spacing: normal;
+      margin-top: 0;
+      margin-right: 0;
+      margin-bottom: 10px;
+      margin-left: 0;
+      /*@editable*/
+      text-align: left;
+    }
+    
+    h2 {
+      /*@editable*/
+      color: #404040 !important;
+      display: block;
+      /*@editable*/
+      font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+      /*@editable*/
+      font-size: 20px;
+      /*@editable*/
+      font-style: normal;
+      /*@editable*/
+      font-weight: bold;
+      /*@editable*/
+      line-height: 100%;
+      /*@editable*/
+      letter-spacing: normal;
+      margin-top: 0;
+      margin-right: 0;
+      margin-bottom: 10px;
+      margin-left: 0;
+      /*@editable*/
+      text-align: left;
+    }
+    
+    h3 {
+      /*@editable*/
+      color: #606060 !important;
+      display: block;
+      /*@editable*/
+      font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+      /*@editable*/
+      font-size: 18px;
+      /*@editable*/
+      font-style: normal;
+      /*@editable*/
+      font-weight: bold;
+      /*@editable*/
+      line-height: 100%;
+      /*@editable*/
+      letter-spacing: normal;
+      margin: 10px 0;
+      /*@editable*/
+      text-align: left;
+    }
+    
+    h4 {
+      /*@editable*/
+      color: #808080 !important;
+      display: block;
+      /*@editable*/
+      font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+      /*@editable*/
+      font-size: 14px;
+      /*@editable*/
+      font-style: italic;
+      /*@editable*/
+      font-weight: normal;
+      /*@editable*/
+      line-height: 100%;
+      /*@editable*/
+      letter-spacing: normal;
+      margin-top: 0;
+      margin-right: 0;
+      margin-bottom: 10px;
+      margin-left: 0;
+      /*@editable*/
+      text-align: left;
+    }
+    
+    #templatePreheader {
+      /*@editable*/
+      background-color: #F4F4F4;
+      /*@editable*/
+      border-bottom: 1px solid #CCCCCC;
+    }
+    
+    .preheaderContent {
+      /*@editable*/
+      color: #808080;
+      /*@editable*/
+      font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+      /*@editable*/
+      font-size: 10px;
+      /*@editable*/
+      line-height: 125%;
+      /*@editable*/
+      text-align: left;
+    }
+    
+    .preheaderContent a:link,
+    .preheaderContent a:visited,
+    /* Yahoo! Mail Override */
+    
+    .preheaderContent a .yshortcuts
+    /* Yahoo! Mail Override */
+    
+    {
+      /*@editable*/
+      color: #606060;
+      /*@editable*/
+      font-weight: normal;
+      /*@editable*/
+      text-decoration: underline;
+    }
+    
+    .headerContent a:link,
+    .headerContent a:visited,
+    /* Yahoo! Mail Override */
+    
+    .headerContent a .yshortcuts
+    /* Yahoo! Mail Override */
+    
+    {
+      /*@editable*/
+      color: #2F82DE;
+      /*@editable*/
+      font-weight: normal;
+      /*@editable*/
+      text-decoration: underline;
+    }
+    
+    #headerImage {
+      height: auto;
+      max-width: 600px;
+    }
+    
+    #templateBody {
+      /*@editable*/
+      background-color: #F4F4F4;
+      /*@editable*/
+      border-top: 1px solid #FFFFFF;
+      /*@editable*/
+      border-bottom: 1px solid #CCCCCC;
+    }
+    
+    .bodyContent,
+    .prefooter {
+      /*@editable*/
+      color: #505050;
+      /*@editable*/
+      font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+      /*@editable*/
+      font-size: 16px;
+      /*@editable*/
+      line-height: 150%;
+      padding-top: 20px;
+      padding-right: 20px;
+      padding-bottom: 20px;
+      padding-left: 20px;
+      /*@editable*/
+      text-align: left;
+    }
+    
+    .prefooter {
+      background-color: #F4F4F4;
+      border-top: 1px solid #FFFFFF;
+      border-bottom: 1px solid #CCCCCC;
+      text-align: left;
+    }
+    
+    .bodyContent a:link,
+    .bodyContent a:visited,
+    /* Yahoo! Mail Override */
+    
+    .bodyContent a .yshortcuts
+    /* Yahoo! Mail Override */
+    
+    {
+      /*@editable*/
+      color: #2F82DE;
+      /*@editable*/
+      font-weight: inherit;
+      /*@editable*/
+      text-decoration: none;
+    }
+    
+    .bodyContent img {
+      display: inline;
+      height: auto;
+      max-width: 560px;
+    }
+    
+    .templateColumnContainer {
+      width: 260px;
+    }
+    
+    #templateColumns {
+      /*@editable*/
+      background-color: #F4F4F4;
+      /*@editable*/
+      border-top: 1px solid #FFFFFF;
+      /*@editable*/
+      border-bottom: 1px solid #CCCCCC;
+    }
+    
+    .leftColumnContent {
+      /*@editable*/
+      color: #505050;
+      /*@editable*/
+      font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+      ;
+      /*@editable*/
+      font-size: 14px;
+      /*@editable*/
+      line-height: 150%;
+      padding-top: 0;
+      padding-right: 20px;
+      padding-bottom: 50px;
+      padding-left: 20px;
+      /*@editable*/
+      text-align: left;
+    }
+    
+    .leftColumnContent a:link,
+    .leftColumnContent a:visited,
+    /* Yahoo! Mail Override */
+    
+    .leftColumnContent a .yshortcuts
+    /* Yahoo! Mail Override */
+    
+    {
+      /*@editable*/
+      color: #2F82DE;
+      /*@editable*/
+      font-weight: inherit;
+      /*@editable*/
+      text-decoration: none;
+    }
+    
+    .rightColumnContent {
+      /*@editable*/
+      color: #505050;
+      /*@editable*/
+      font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+      /*@editable*/
+      font-size: 14px;
+      /*@editable*/
+      line-height: 150%;
+      padding-top: 0;
+      padding-right: 20px;
+      padding-bottom: 50px;
+      padding-left: 20px;
+      /*@editable*/
+      text-align: left;
+    }
+    
+    .rightColumnContent a:link,
+    .rightColumnContent a:visited,
+    /* Yahoo! Mail Override */
+    
+    .rightColumnContent a .yshortcuts
+    /* Yahoo! Mail Override */
+    
+    {
+      /*@editable*/
+      color: #2F82DE;
+      /*@editable*/
+      font-weight: inherit;
+      /*@editable*/
+      text-decoration: none;
+    }
+    
+    .leftColumnContent img,
+    .rightColumnContent img {
+      display: inline;
+      height: auto;
+      max-width: 260px;
+    }
+    
+    .single-spark-item-image-link-wrapper {
+      display: block;
+      margin: 0 0 5px 0;
+    }
+    
+    #templateFooter {
+      /*@editable*/
+      background-color: #F4F4F4;
+      /*@editable*/
+      border-top: 1px solid #FFFFFF;
+    }
+    
+    .footerContent {
+      /*@editable*/
+      color: #808080;
+      /*@editable*/
+      font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+      /*@editable*/
+      font-size: 10px;
+      /*@editable*/
+      line-height: 150%;
+      padding-top: 20px;
+      padding-right: 20px;
+      padding-bottom: 20px;
+      padding-left: 20px;
+      /*@editable*/
+      text-align: left;
+    }
+    
+    .footerContent a:link,
+    .footerContent a:visited,
+    /* Yahoo! Mail Override */
+    
+    .footerContent a .yshortcuts,
+    .footerContent a span
+    /* Yahoo! Mail Override */
+    
+    {
+      /*@editable*/
+      color: #606060;
+      /*@editable*/
+      font-weight: normal;
+      /*@editable*/
+      text-decoration: underline;
+    }
+    
+    @media only screen and (max-width: 480px) {
+      body,
+      table,
+      td,
+      p,
+      a,
+      li,
+      blockquote {
+        -webkit-text-size-adjust: none !important;
+      }
+      /* Prevent Webkit platforms from changing default text sizes */
+      body {
+        width: 100% !important;
+        min-width: 100% !important;
+      }
+      /* Prevent iOS Mail from adding padding to the body */
+      #bodyCell {
+        padding: 10px !important;
+      }
+      #templateContainer {
+        max-width: 600px !important;
+        /*@editable*/
+        width: 100% !important;
+      }
+      h1 {
+        /*@editable*/
+        font-size: 24px !important;
+        /*@editable*/
+        line-height: 100% !important;
+      }
+      h2 {
+        /*@editable*/
+        font-size: 20px !important;
+        /*@editable*/
+        line-height: 100% !important;
+      }
+      h3 {
+        /*@editable*/
+        font-size: 18px !important;
+        /*@editable*/
+        line-height: 100% !important;
+      }
+      h4 {
+        /*@editable*/
+        font-size: 16px !important;
+        /*@editable*/
+        line-height: 100% !important;
+      }
+      #templatePreheader {
+        display: none !important;
+      }
+      /* Hide the template preheader to save space */
+      #headerImage {
+        height: auto !important;
+        /*@editable*/
+        max-width: 600px !important;
+        /*@editable*/
+        width: 100% !important;
+      }
+      .headerContent {
+        /*@editable*/
+        font-size: 20px !important;
+        /*@editable*/
+        line-height: 125% !important;
+      }
+      .bodyContent {
+        /*@editable*/
+        font-size: 16px !important;
+        /*@editable*/
+        line-height: 125% !important;
+      }
+      .templateColumnContainer {
+        display: block !important;
+        width: 100% !important;
+      }
+      .columnImage {
+        height: auto !important;
+        /*@editable*/
+        max-width: 480px !important;
+        /*@editable*/
+        width: 100% !important;
+      }
+      .leftColumnContent {
+        /*@editable*/
+        font-size: 16px !important;
+        /*@editable*/
+        line-height: 125% !important;
+      }
+      .rightColumnContent {
+        /*@editable*/
+        font-size: 16px !important;
+        /*@editable*/
+        line-height: 125% !important;
+      }
+      .footerContent {
+        /*@editable*/
+        font-size: 14px !important;
+        /*@editable*/
+        line-height: 115% !important;
+      }
+      .footerContent a {
+        display: block !important;
+      }
+      /* Place footer social and utility links on their own lines, for easier access */
+    }
+  </style>
+  
+  <center>
+    <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
+      <tr>
+        <td align="center" valign="top" id="bodyCell">
+          <!-- BEGIN TEMPLATE // -->
+          <table border="0" cellpadding="0" cellspacing="0" id="templateContainer">
+            <tr>
+              <td align="center" valign="top">
+                <!-- BEGIN HEADER // -->
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateHeader">
+                  <tr>
+                    <td valign="top" class="headerContent">
+                      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-1/codepen-spark-header.png" style="max-width:600px;" id="headerImage" />
+                    </td>
+                  </tr>
+                </table>
+                <!-- // END HEADER -->
+              </td>
+            </tr>
+            <tr>
+              <td align="center" valign="top">
+                <!-- BEGIN BODY // -->
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateBody">
+                  <tr>
+                    <td valign="top" class="bodyContent">
+                      <h1>Typography, Transitions, and 2D Animation</h1> 
+                      <p>This week, the CodePen community works typographic magic, makes stunning page transitions with React and Vue, and shows off some inspiring 2D animation. Plus, check out a selection of the latest jobs from our Job board, and upcoming meetups around the world! </p>
+                    </td>
+                  </tr>
+                </table>
+                <!-- // END BODY -->
+              </td>
+            </tr>
+            <tr>
+              <td align="center" valign="top">
+                <!-- BEGIN COLUMNS // -->
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateColumns">
+                  <tr>
+                    <td align="center" valign="top" class="templateColumnContainer" style="padding-top:20px;">
+  
+                      <table border="0" cellpadding="20" cellspacing="0" width="100%" class="single-spark-item">
+                        <tr>
+                          <td class="leftColumnContent">
+                            <a href="https://codepen.io/mandymichael/pen/bWqyMN" class="single-spark-item-image-link-wrapper">
+                              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-1/layered-fonts-in-css.png" alt="Layered fonts in CSS" style="max-width:260px;" class="columnImage" />
+                            </a>
+                            <h3>
+          <a href="https://codepen.io/mandymichael/pen/bWqyMN">
+            Layered fonts in CSS
+          </a>
+        </h3> Mandy Michael works a bit of CSS magic and stacks five variations on the Rig Shaded font into one for a spectacular layered look.
+                          </td>
+                        </tr>
+                      </table>
+  
+                      <table border="0" cellpadding="20" cellspacing="0" width="100%" class="single-spark-item">
+                        <tr>
+                          <td class="leftColumnContent">
+                            <a href="https://codepen.io/meowwwls/pen/WjpGOP" class="single-spark-item-image-link-wrapper">
+                              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-1/start-spreading-the-news.png" alt="Start Spreading the News" style="max-width:260px;" class="columnImage" />
+                            </a>
+                            <h3>
+          <a href="https://codepen.io/meowwwls/pen/WjpGOP">
+            Start Spreading the News
+          </a>
+        </h3> Melissa Em's eye-popping poster shows off the high-style potential of CSS with text-stroke, filters, and mix-blend-mode.
+                          </td>
+                        </tr>
+                      </table>
+  
+                      <table border="0" cellpadding="20" cellspacing="0" width="100%" class="single-spark-item">
+                        <tr>
+                          <td class="leftColumnContent">
+                            <a href="https://codepen.io/pro/teams" class="single-spark-item-image-link-wrapper">
+                              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-1/team-pro.png" alt="CodePen PRO Teams" style="max-width:260px;" class="columnImage" />
+                            </a>
+                            <h3>
+          <a href="https://codepen.io/pro/teams">
+            CodePen PRO Teams
+          </a>
+        </h3> Want to share CodePen with your whole organization? Check out our PRO teams! Collaborate, design, and develop together with the power of CodePen PRO.
+                          </td>
+                        </tr>
+                      </table>
+  
+                      <table border="0" cellpadding="20" cellspacing="0" width="100%" class="single-spark-item">
+                        <tr>
+                          <td class="leftColumnContent">
+                            <a href="http://ramenhog.com/blog/2017/05/01/creating-a-draggable-element-with-javascript" class="single-spark-item-image-link-wrapper">
+                              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-1/move-me.gif" alt="Creating a draggable element with JavaScript" style="max-width:260px;" class="columnImage" />
+                            </a>
+                            <h3>
+          <a href="http://ramenhog.com/blog/2017/05/01/creating-a-draggable-element-with-javascript">
+            Creating a draggable element with JavaScript
+          </a>
+        </h3> Stephanie Liu shows how "I made this cute lil CodePen buddy in an attempt to learn more about creating draggable UI elements with vanilla JS instead of relying on a JS library to do it for me."
+                          </td>
+                        </tr>
+                      </table>
+  
+                      <table border="0" cellpadding="20" cellspacing="0" width="100%" class="single-spark-item">
+                        <tr>
+                          <td class="leftColumnContent">
+                            <a href="https://codepen.io/K-T/" class="single-spark-item-image-link-wrapper">
+                              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-1/kt-profile.png" alt="K-T on CodePen" style="max-width:260px;" class="columnImage" />
+                            </a>
+                            <h3>
+          <a href="https://codepen.io/K-T/">
+            K-T on CodePen
+          </a>
+        </h3> CodePen member K-T says "I love canvas 2d!", and they show that love with beautiful, soothing animations of elements in nature.
+                          </td>
+                        </tr>
+                      </table>
+  
+                      <table border="0" cellpadding="20" cellspacing="0" width="100%" class="single-spark-item">
+                        <tr>
+                          <td class="leftColumnContent">
+                            <a href="https://codepen.io/team/Cloudinary/project/editor/APBgNZ/" class="single-spark-item-image-link-wrapper">
+                              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-1/cloudinary-project.png" alt="Cloudinary Progressive Web App jQuery" style="max-width:260px;" class="columnImage" />
+                            </a>
+                            <h3>
+          <a href="https://codepen.io/team/Cloudinary/project/editor/APBgNZ/">
+            Cloudinary Progressive Web App jQuery
+          </a>
+        </h3> Team Cloudinary's project is a great example of how to use service workers in Projects!
+                          </td>
+                        </tr>
+                      </table>
+  
+                    </td>
+                    <td align="center" valign="top" class="templateColumnContainer" style="padding-top:20px;">
+  
+                      <table border="0" cellpadding="20" cellspacing="0" width="100%" class="single-spark-item">
+                        <tr>
+                          <td class="leftColumnContent">
+                            <a href="https://codepen.io/chrisgannon/post/exciting-times-for-interactive-animation" class="single-spark-item-image-link-wrapper">
+                              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-1/gannon-animation.gif" alt="Exciting Times for Interactive Animation" style="max-width:260px;" class="columnImage" />
+                            </a>
+                            <h3>
+          <a href="https://codepen.io/chrisgannon/post/exciting-times-for-interactive-animation">
+            Exciting Times for Interactive Animation
+          </a>
+        </h3> Chris Gannon gives us a glimpse into how he works with Bodymovin, Rubber Hose, and Greensock to create his inventive animations.
+                          </td>
+                        </tr>
+                      </table>
+  
+                      <table border="0" cellpadding="20" cellspacing="0" width="100%" class="single-spark-item">
+                        <tr>
+                          <td class="leftColumnContent">
+                            <a href="https://codepen.io/serkai/pen/NjjmYB" class="single-spark-item-image-link-wrapper">
+                              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-1/thinking-with-type.png" alt="Thinking with Type" style="max-width:260px;" class="columnImage" />
+                            </a>
+                            <h3>
+          <a href="https://codepen.io/serkai/pen/NjjmYB">
+            Thinking with Type
+          </a>
+        </h3> David Bullock created a CSS tribute to the classic typography design manual "Thinking with Type" by Ellen Lupton.
+                          </td>
+                        </tr>
+                      </table>
+  
+                      <table border="0" cellpadding="20" cellspacing="0" width="100%" class="single-spark-item">
+                        <tr>
+                          <td class="leftColumnContent">
+                            <a href="https://codepen.io/collection/nbGZVv/" class="single-spark-item-image-link-wrapper">
+                              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-1/star-wars-day.png" alt="Star Wars Day" style="max-width:260px;" class="columnImage" />
+                            </a>
+                            <h3>
+          <a href="https://codepen.io/collection/nbGZVv/">
+            Star Wars Day
+          </a>
+        </h3> The force was strong on May the Fourth and Revenge of the Fifth this year! CodePen team member Marie Mosley gathered up the newest Star Wars day Pens in her collection.
+                          </td>
+                        </tr>
+                      </table>
+  
+                      <table border="0" cellpadding="20" cellspacing="0" width="100%" class="single-spark-item">
+                        <tr>
+                          <td class="leftColumnContent">
+                            <a href="https://codepen.io/sdras/pen/gWWQgb" class="single-spark-item-image-link-wrapper">
+                              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-1/react-animated-page-transitions.png" alt="React Animated Page Transitions" style="max-width:260px;" class="columnImage" />
+                            </a>
+                            <h3>
+          <a href="https://codepen.io/sdras/pen/gWWQgb">
+            React Animated Page Transitions
+          </a>
+        </h3> Sarah Drasner's page transition demo uses Greensock and SVG to dramatic, geometric effect.
+                          </td>
+                        </tr>
+                      </table>
+  
+                      <table border="0" cellpadding="20" cellspacing="0" width="100%" class="single-spark-item">
+                        <tr>
+                          <td class="leftColumnContent">
+                            <a href="https://codepen.io/knyttneve/pen/MmEMOK" class="single-spark-item-image-link-wrapper">
+                              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-1/vue-blog-concept.png" alt="Minimal Blog Concept with Vue.js #2" style="max-width:260px;" class="columnImage" />
+                            </a>
+                            <h3>
+          <a href="https://codepen.io/knyttneve/pen/MmEMOK">
+            Minimal Blog Concept with Vue.js #2
+          </a>
+        </h3> Mert Nerukuc's blog design has everything: slick hover effects, minimal but intuitive navigation, and striking monochromatic hero images.
+                          </td>
+                        </tr>
+                      </table>
+  
+                      <table border="0" cellpadding="20" cellspacing="0" width="100%" class="single-spark-item">
+                        <tr>
+                          <td class="leftColumnContent">
+                            <a href="https://codepen.io/samirc/pen/xdPOWL/" class="single-spark-item-image-link-wrapper">
+                              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-1/brain-function-visualisation.png" alt="Brain Function Visualisation using SVG" style="max-width:260px;" class="columnImage" />
+                            </a>
+                            <h3>
+          <a href="https://codepen.io/samirc/pen/xdPOWL/">
+            Brain Function Visualisation using SVG
+          </a>
+        </h3> Hover the sections in the brain in Sam Chahine's Pen to learn more about what each section does, or pick his brains about how he built it by checking out the source code.
+                          </td>
+                        </tr>
+                      </table>
+  
+                    </td>
+                  </tr>
+                </table>
+                <!-- // END COLUMNS -->
+              </td>
+            </tr>
+            <tr>
+              <td align="left" valign="top" id="prefooter" class="prefooter">
+                <h2>Jobs!</h2>
+                <p>A couple of selections from our <a href="https://codepen.io/jobs/">Job Board</a>:</p>
+                <ul>
+                  <li><a href="https://codepen.io/url/job/zbXXbr">Sr. Rails & Front End Developer</a> at Aha!</li>
+                  <li><a href="https://codepen.io/url/job/zwWWAz">Front-End Developer</a> at Trimble Inc.</li>
+                  <li><a href="https://codepen.io/url/job/ZNEEWz">UI/UX Developer</a> at AccuLynx</li>
+                  <li><a href="https://codepen.io/url/job/rEyywr">Front End Developer</a> at Studio Rotate</li>
+                  <li><a href="https://codepen.io/url/job/zXKKan">Front-End/WordPress Developer</a> at Kaliber Interactive B.V.</li>
+                  <li><a href="https://codepen.io/url/job/rBDDaz">Front-End Developer</a> at Gravity Works Design & Development</li>
+                  <li><a href="https://codepen.io/url/job/rkMMwz">Sr. Front-end Developer</a> at Weedmaps</li>
+                  <li><a href="https://codepen.io/url/job/nAMMRn">Product Designer</a> at Treehouse</li>
+                  <li><a href="https://codepen.io/url/job/zpbbRr">Senior Web Developer</a> at Murray Creative</li>
+                  <li><a href="https://codepen.io/url/job/rQeeer">Front End Developer</a> at Salmon</li>
+                </ul>
+                Have a job opening at your company? <a href="https://codepen.io/job/new">Post it!</a>
+              </td>
+            </tr>
+            <tr>
+              <td align="left" valign="top" id="prefooter" class="prefooter">
+                <h2>Meetups!</h2>
+                <p>Coming soon, to a city near you:</p>
+                <ul>
+                  <li><a href="https://www.meetup.com/Front-end-Developers-of-Miami/events/239045920">Miami, Florida</a> on May 9th</li>
+                  <li><a href="https://nvite.com/LetsCodepen/39z9zw">London, United Kingdom</a> on May 25th</li>
+                  <li><a href="https://www.meetup.com/CodePenDublin/events/239042345/">Dublin, Ireland</a> on May 30th</li>
+                  <li><a href="https://nvite.com/CodePenMeetupHH/vzepv9">Hamburg, Germany</a> on June 1st</li>
+                  <li><a href="https://www.meetup.com/Front-End-Web-Developers-Perth/events/236961420/">Perth, Australia</a> on June 11th</li>
+                  <li><a href="https://www.meetup.com/CodePen-Orebro/events/239536733/">Örebro, Sweden</a> on June 20th</li>
+                  <li><a href="https://nvite.com/CodePenMeetup/prjdmv">West Palm Beach, Florida</a> on July 10th</li>
+                  <li><a href="http://rfrshpdx.org/codepen-show-tell-2017/">Portland, Oregon</a>on July 19th</li>
+                </ul>
+                Wanna host one? <a href="https://codepen.io/meetups/host">You can</a>!
+              </td>
+            </tr>
+            <tr>
+              <td align="left" valign="top" id="prefooter" class="prefooter">
+                <h2>Sponsor the Spark</h2>
+                <p>Get your message out to thousands of <a href="https://codepen.io/advertising#advertise-in-spark">CodePengineers!</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td align="center" valign="top">
+                <!-- BEGIN FOOTER // -->
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateFooter">
+                  <tr>
+                    <td valign="top" class="footerContent">
+                      You're receiving this email because you are a member of CodePen.
+                      <br /> You can <a data-msys-unsubscribe="1" href="https://codepen.io/admin/unsubscribed" title="Unsubscribe from CodePen email">opt out</a> of this type of email any time. Or manage your notification settings <a href="https://codepen.io/you/settings/notifications">here.</a>
+                    </td>
+                  </tr>
+                </table>
+                <!-- // END FOOTER -->
+              </td>
+            </tr>
+          </table>
+          <!-- // END TEMPLATE -->
+        </td>
+      </tr>
+    </table>
+  </center>
