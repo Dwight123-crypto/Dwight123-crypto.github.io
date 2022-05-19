@@ -62,6 +62,34 @@
     <img src="https://logos-download.com/wp-content/uploads/2016/09/React_logo_wordmark.png" class="s" alt="React">
     <img src="https://puppet-master.net/wp-content/uploads/2014/03/tutorials-ue4-cube.png" class="ss" width="150px" alt="UE4">
     </div>
-    <script src="code.js"></script>
+    <script>
+        $(function() {
+    // Smooth Scrolling
+    $('a[href*="#"]:not([href="#"])').click(function() {
+      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+          $('html, body').animate({
+            scrollTop: target.offset().top
+          }, 1000);
+          return false;
+        }
+      }
+    });
+  });
+
+
+$(document).ready(function(){
+    $(window).scroll(function() { // check if scroll event happened
+      if ($(document).scrollTop() > 550) { // check if user scrolled more than 50 from top of the browser window
+        $(".nav").css("background-color", "#156377"); // if yes, then change the color of class "navbar-fixed-top" to white (#f8f8f8)
+      } else {
+        $(".nav").css("background-color", "transparent"); // if not, change it back to transparent
+      }
+    });
+  });
+
+    </script>
   </body>
 </html>
