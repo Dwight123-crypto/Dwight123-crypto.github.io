@@ -3,93 +3,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <title>Dwight123-crypto</title>
 </head>
-<header>
-    <title>Animated Landing Page</title>
-  </header>
-  <body data-spy="scroll" data-target=".navbar" data-offset=50>
-    <nav class="nav navbar navbar-expand fixed-top">
-    <a class="nav navbar-brand" href="#home">Home</a>
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#about">About</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#resume">Resume</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#experience">Experience</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#projects">Projects</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#contact">Contact</a>
-      </li>
-    </ul>
-  </nav>
-    <section id="home" class="intro">
-      <div class="inner">
-        <div class="content">
-            <section class="animated bounceInUp">
-              <h1>Mike Upton</h1>
-            </section>
-          <section class="animated bounceInUp"style="color:#098fa8; margin-bottom:20px;">
-              <h3>Aspiring Software Engineer</h3>
-            </section>
-            <section class="animated bounceInUp" style="animation-delay:0.3s">
-              <a class="btn" href="#about">Learn More!</a>
-            </section>
-        </div>
-      </div>
-    </section>
-    <div id="about" class="box2">
-      <p>
-      </br> 
-  </p>
-  <h3 class="display-3 title">About Me</h3>
-  <p>
-     Hello! My name is Mike Upton, I am a current Junior studying Computer Science at Wentworth Institute of Techology. My interests include front-end development using JS, React and Node as well as game development using Unreal Engine. I am the current Director of Engineering for the Wentworth Game Development Club where I teach workshops on Agile Methodology, Version Control with Git, the Game Design Pipeline, and Unreal Engine Practices.</p>
-  
-  
-  <h3 class="display-3 title">Skills</h3>
-  
-  <div class="skills">
-    <img src="https://logos-download.com/wp-content/uploads/2016/10/Java_logo_icon.png" class="s" alt="Java">
-    <img src="https://js.devexpress.com/Content/Images/features/html5-css-javascript-logos.png" alt="front-end" class="s">
-    <img src="https://logos-download.com/wp-content/uploads/2016/09/React_logo_wordmark.png" class="s" alt="React">
-    <img src="https://puppet-master.net/wp-content/uploads/2014/03/tutorials-ue4-cube.png" class="ss" width="150px" alt="UE4">
+<body>
+    
+    <div class="main">
+        <ul>
+            <li  id="color-bcg" class="active">
+                <nav class="menu">
+                    <h4>Home</h4>
+                    <h4>About Us</h4>
+                    <h4>Products</h4>
+                    <h4>Contact</h4>
+                </nav>
+                <article>
+                    <h1>An amazing text here.</h1>
+                </article>
+            </li>
+            <li>
+                <section id="content-2">
+                    <h2>Click here.</h2>
+                    <p class="d-none">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </section>
+            </li>
+        </ul>
+        <ul>
+            <li id="content-3">
+                <img src="https://i.gifer.com/1e.gif"></img>
+            </li>
+            <li id="content-4">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </li>
+        </ul>
     </div>
-    <script>
-        $(function() {
-    // Smooth Scrolling
-    $('a[href*="#"]:not([href="#"])').click(function() {
-      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-        var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-        if (target.length) {
-          $('html, body').animate({
-            scrollTop: target.offset().top
-          }, 1000);
-          return false;
-        }
-      }
-    });
-  });
-
-
-$(document).ready(function(){
-    $(window).scroll(function() { // check if scroll event happened
-      if ($(document).scrollTop() > 550) { // check if user scrolled more than 50 from top of the browser window
-        $(".nav").css("background-color", "#156377"); // if yes, then change the color of class "navbar-fixed-top" to white (#f8f8f8)
-      } else {
-        $(".nav").css("background-color", "transparent"); // if not, change it back to transparent
-      }
-    });
-  });
-
-    </script>
-  </body>
+    <script src="code.js"></script>
+</body>
 </html>

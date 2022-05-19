@@ -1,26 +1,38 @@
-$(function() {
-    // Smooth Scrolling
-    $('a[href*="#"]:not([href="#"])').click(function() {
-      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-        var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-        if (target.length) {
-          $('html, body').animate({
-            scrollTop: target.offset().top
-          }, 1000);
-          return false;
-        }
-      }
-    });
-  });
+var section = $('li');
+
+function toggleAccordion() {
+    section.removeClass('active');
+    
+    if (!$(this).hasClass('active')) {
+        $(this).addClass('active');
+        $('.menu').addClass('menu-bcg');
+        $('article').removeClass('max');
+        $('article').addClass('min');
+        $('#content-2 h2').addClass('d-none');
+        $('#content-2 p').removeClass('d-none');
 
 
-$(document).ready(function(){
-    $(window).scroll(function() { // check if scroll event happened
-      if ($(document).scrollTop() > 550) { // check if user scrolled more than 50 from top of the browser window
-        $(".nav").css("background-color", "#156377"); // if yes, then change the color of class "navbar-fixed-top" to white (#f8f8f8)
-      } else {
-        $(".nav").css("background-color", "transparent"); // if not, change it back to transparent
-      }
-    });
-  });
+    }
+
+    if ($('article').closest('li').hasClass('active')) {
+        $('article').removeClass('min');
+        $('article').addClass('max');
+        $('.menu').removeClass('menu-bcg');
+        $('#content-2 p').addClass('d-none');
+        $('#content-2 h2').removeClass('d-none');
+
+    }
+}
+
+section.on('click', toggleAccordion);
+
+ $(".main").onepage_scroll({
+   sectionContainer: "ul",     
+   easing: "ease",                  
+   animationTime: 400,            
+   pagination: true,                
+   loop: false,                     
+   keyboard: true,                 
+   responsiveFallback: false,        
+   direction: "vertical"           
+ });
